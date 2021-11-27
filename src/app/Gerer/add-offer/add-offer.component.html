@@ -1,0 +1,33 @@
+<h1>Insert Voyage Data</h1>
+<form [formGroup]="Main" class="formGroup">
+    <div class="contain" style="margin: bottom 100px;">
+        <label class="form-label">Voyage ID:</label>
+        <input type="text" class="form-control" size="20" name="id" formControlName="id" /><br><br>
+        <label class="form-label">Voyage Destination:</label>
+        <input type="text" name="destination" class="form-control" formControlName="destination" /><br><br>
+        <label class="form-label">Voyage Price:</label>
+        <input type="text" name="price" class="form-control" formControlName="price" /><br><br>
+        <label class="form-label">Promo?</label>
+        <input type="radio" name="promo" value="true" formControlName="promo" />Yes
+        <input type="radio" name="promo" value="false" formControlName="promo" />No<br><br>
+        <label class="form-label">Insert image Source:</label>
+        <input type="text" name="source" value="myfile.value" formControlName="source" />
+        <input type="file" name="myfile" />
+        <br><br>
+        <label class="form-label">New?</label>
+        <input type="radio" name="new" value="true" formControlName="new" />Yes
+        <input type="radio" name="new" value="false" formControlName="new" />No<br><br>
+        <label class="form-label">Delay</label>
+        <input type="date" name="date" value="delay" formControlName="delay" /><br><br>
+        <label class="form-label">categories</label>
+        <select class="form-control" formControlName="categorie">
+    
+<option *ngFor="let i of categories" [value]="i" name="i"   >{{i}}</option> 
+</select><br><br>
+        <label class="form-label">Descriptions</label>
+        <textarea cols="80" class="form-control" rows="5" name="descriptions" formControlName="descriptions"></textarea><br><br>
+        <input type="submit" class="btn btn-primary" (click)="CreateOffre()" style="margin-left:190px;" name="insert" value="AjoutVoyage" />
+        <button class="btn btn-danger" style="margin-left:15px;" (click)="back()">Cancel</button>
+    </div>
+</form>
+<button class="btn btn-dark logout" (click)="logout()">Log out</button>

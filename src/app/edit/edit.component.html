@@ -1,17 +1,25 @@
-<div class = "contain">
-    <input type = "text" placeholder = "Offer name" class = "form-control search"> &nbsp;
-    <button class = "btn btn-success">Add new offer</button><br><br>
+<form formGroup="main">
+    <div class="contain">
+        <input type="text" placeholder="Offer name" class="form-control search"> &nbsp;
 
-    <ul class = "list-group">
-        <li class = "list-group-item">
-            <b>Offer title</b>
-            <span class= "controls">
+        <button class="btn btn-success" (click)="Add()">Add new offer</button><br><br>
+
+
+        <ul class="list-group">
+            <li class="list-group-item">
+                <b>Offer title</b>
+                <span class="controls">
                 <button class = "btn btn-primary">See more</button> &nbsp;
                 <button class = "btn btn-warning">Modify</button> &nbsp;
-                <button class = "btn btn-danger">Delete record</button> &nbsp;
+                <button class = "btn btn-danger" mat-raised-button (click)="openDialog()">Delete record</button> &nbsp;
             </span>
-        </li>
-    </ul>
-</div>
+            </li>
+        </ul>
+    </div>
 
-<button class = "btn btn-dark logout" (click) = "logout()">Log out</button>
+</form>
+
+<button class="btn btn-dark logout" (click)="logout()">Log out</button>
+<ng-container *ngFor="let i of dest">
+    <li>{{i.id}}</li>
+</ng-container>
